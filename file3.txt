@@ -1,4 +1,11 @@
 shjksnsngk
 nvisnb
+<<<<<<< HEAD
 
 fahgjhka
+=======
+hfkjaghnka hfkagnkna
+
+
+today is fine
+>>>>>>> 2bd17c7d0e718f0b11ec44cc06fc6dcda13bc6dd
