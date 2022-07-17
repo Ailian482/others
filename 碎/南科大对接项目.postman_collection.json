@@ -1,0 +1,355 @@
+{
+	"info": {
+		"_postman_id": "c58e0c2e-97c9-471b-8c2d-7b7d19afd197",
+		"name": "南科大对接项目",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "查询员工信息",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"clientCode\":\"210004\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/employee/queryCorpEmployee",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"employee",
+						"queryCorpEmployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "健康接口",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/login/hello",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"login",
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加审批单据",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"data\":{\n        \"approvalNo\":\"200111119\",\n        \"applyEmployeeClientCode\":\"210004\",\n        \"employees\":[\n            {\n                \"clientCode\":\"210001\"\n            },{\n                \"clientCode\":\"210002\"\n            },{\n                \"clientCode\":\"210003\"\n            },{\n                \"clientCode\":\"210004\"\n            }\n        ],\n        \"travelDateStart\":\"2020-07-21\",\n        \"travelDateEnd\":\"2020-07-22\",\n        \"travelFrom\":\"深圳\",\n        \"travelDestination\":\"北京\",\n        \"travelReason\":\"出差\",\n        \"transport\":\"飞机\",\n        \"projectType\":\"科研项目\",\n        \"memo\":\"这是备注信息\",\n        \"status\":1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/approval/addCorpApproval",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"approval",
+						"addCorpApproval"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "查询审批单",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"approvalNo\":\"200111119\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/approval/queryCorpApproval",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"approval",
+						"queryCorpApproval"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新审批单",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"data\":{\n        \"approvalNo\":\"10010022\",\n        \"travelDateStart\":\"2030-01-01\",\n        \"travelDateEnd\":\"2030-01-15\",\n        \"travelFrom\":\"大萨达\",\n        \"travelDestination\":\"31231\",\n        \"travelReason\":\"New Reason\",\n        \"transport\":\"New Transport\",\n        \"memo\":\"New Memo\",\n        \"status\":2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/approval/updateCorpApproval",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"approval",
+						"updateCorpApproval"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新出差申请单状态",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"data\":{\n        \"approvalNo\":\"100111119\",\n        \"status\":1\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/approval/updateCorpApprovalStatus",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"approval",
+						"updateCorpApprovalStatus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "添加员工",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"data\":{\n        \"clientCode\":\"210005\",\n        \"nameCn\":\"陈六丰\",\n        \"nameEn\":\"CHANG/LIU FENG\",\n        \"gender\":\"Male\",\n        \"mobile\":\"19222224405\",\n        \"email\":\"testEmail24@tehang.com\",\n        \"workNo\":\"210005\",\n        \"departmentFullName\":\"总部\",\n        \"birthday\":\"1995-05-10\",\n        \"registerTime\":\"2019-08-15 15:30:00\",\n        \"canBookingForOthers\":true,\n        \"creditEnable\":true,\n        \"rankName\": \"一类\",\n        \"memo\":\"这是一条备注信息\",\n        \"docs\":[\n            {\n                \"docType\":\"IdCard\",\n                \"docNo\":\"110101199003070273\"\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/employee/addCorpEmployee",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"employee",
+						"addCorpEmployee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "国内机票查询",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"orderNo\":\"110019538\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/flight/queryFlightOrderTickets",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"flight",
+						"queryFlightOrderTickets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "账单查询",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"orderNo\":\"110013706\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/finance/queryBillFlightPayments",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"finance",
+						"queryBillFlightPayments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取登录token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"clientCode\":\"210004\",\n    \"approvalNo\":\"200111119\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/login/getEmployeeLoginToken",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"login",
+						"getEmployeeLoginToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "更新员工状态",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"corpCode\":\"32131\",\n    \"sign\":\"8888c8389501a4f96a0de7805e64bb2b\",\n    \"clientCode\":\"110287\",\n    \"enabled\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://test-corp-integration-api-gateway-env-4.teyixing.com/corp/v1/employee/updateCorpEmployeeEnabled",
+					"protocol": "https",
+					"host": [
+						"test-corp-integration-api-gateway-env-4",
+						"teyixing",
+						"com"
+					],
+					"path": [
+						"corp",
+						"v1",
+						"employee",
+						"updateCorpEmployeeEnabled"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
